@@ -39,7 +39,7 @@ fun usageOfLet() {
         println("Printing \"$str\":")
         str?.let {                         // Uses safe call, so let and its code block will be executed only on non-null values.
             println(it)
-            
+
         }
     }
 
