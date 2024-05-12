@@ -1,5 +1,7 @@
 fun main() {
 
+    println()
+
     //Let
     usageOfLet()
 
@@ -20,6 +22,7 @@ fun main() {
 
 fun usageOfLet() {
     println("===================================Let===================================")
+    println()
     /*
     The Kotlin standard library function let can be used for scoping and null-checks.
     When called on an object, let executes the given block of code and returns the result of its last expression.
@@ -35,9 +38,8 @@ fun usageOfLet() {
     fun printNonNull(str: String?) {
         println("Printing \"$str\":")
         str?.let {                         // Uses safe call, so let and its code block will be executed only on non-null values.
-            print("\t")
             println(it)
-            println()
+            
         }
     }
 
@@ -45,7 +47,6 @@ fun usageOfLet() {
         strOne?.let { firstString ->       // Uses the custom name instead of it, so that the nested let can access the context object of the outer let.
             strTwo?.let { secondString ->
                 println("$firstString : $secondString")
-                println()
             }
         }
     }
@@ -53,12 +54,15 @@ fun usageOfLet() {
     printNonNull(null)
     printNonNull("my string")
     printIfBothNonNull("First", "Second")
+    println()
+
 
 
 }
 
 fun usageOfRun() {
     println("===================================Run===================================")
+    println()
     /*
     Like let, run is another scoping function from the standard library.
     Basically, it does the same: executes a code block and returns its result.
@@ -76,10 +80,13 @@ fun usageOfRun() {
     getNullableLength(null)
     getNullableLength("")
     getNullableLength("some string with Kotlin")
+    println()
+
 }
 
 fun usageOfWith() {
     println("===================================With===================================")
+    println()
     /*
     with is a non-extension function that can access members of its argument concisely:
     you can omit the instance name when referring to its members.
@@ -93,11 +100,14 @@ fun usageOfWith() {
     }
 // instead of:
     println("${configuration.host}:${configuration.port}")
+    println()
+
 
 }
 
 fun usageOfAlso() {
-
+    println("===================================Also===================================")
+    println()
     /*
     also works like apply: it executes a given block and returns the object called.
     Inside the block, the object is referenced by it, so it's easier to pass it as an argument.
@@ -107,11 +117,17 @@ fun usageOfAlso() {
         Person("Test User", 44, "Android developer")   // Creates a Person() object with the given property values.
             .also {                                                     // Applies the given code block to the object. The return value is the object itself.
                 writeCreationLog(it)                                    // Calls the logging function passing the object as an argument.
+
             }
+    println("After Also Person Name : ${jake.name} Age : ${jake.age} About : ${jake.about}")
+    println()
+
+
 }
 
 fun usageOfApply() {
     println("===================================Apply===================================")
+    println()
     /*
     apply executes a block of code on an object and returns the object itself.
     Inside the block, the object is referenced by this.
@@ -126,6 +142,8 @@ fun usageOfApply() {
     }
     println("Description Object Person Name : ${Description.name} Age : ${Description.age} About : ${Description.about}")
     println("After Apply Person Name : ${jake.name} Age : ${jake.age} About : ${jake.about}")
+    println()
+
 }
 
 class Person(var name: String, var age: Int, var about: String) {
