@@ -287,7 +287,7 @@ fun associateBygroupBy(){
     Functions associateBy and groupBy build maps from the elements of a collection indexed by the specified key.
     The key is defined in the keySelector parameter.
     You can also specify an optional valueSelector to define what will be stored in the value of the map element.
-    The difference between associateBy and groupBy is how they process objects with the same key:
+    The difference between associateBy and groupBy is how they process objects with the same key.
     associateBy uses the last suitable element as the value.
     groupBy builds a list of all suitable elements and puts it in the value.
     The returned map preserves the entry iteration order of the original collection.
@@ -339,8 +339,8 @@ fun flatMap(){
     builds a single list of the transformation results.
     The transformation is user-defined.
     */
-    val fruitsBag = listOf("apple","orange","banana","grapes")  // 1
-    val clothesBag = listOf("shirts","pants","jeans")           // 2
+    val fruitsBag = listOf("apple","orange","banana","grapes")
+    val clothesBag = listOf("shirts","pants","jeans")
     val cart = listOf(fruitsBag, clothesBag)                    // Adds fruitsBag and clothesBag to the cart list.
     val mapBag = cart.map { it }                                // Builds a map of cart elements, which is a list of two lists.
     val flatMapBag = cart.flatMap { it }                        // Builds a flatMap of cart elements, which is a single list consisting of elements from both lists.
